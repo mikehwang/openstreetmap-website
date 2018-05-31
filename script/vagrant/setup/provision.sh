@@ -26,7 +26,7 @@ gem2.3 install bundler
 ## install the bundle necessary for openstreetmap-website
 pushd /srv/openstreetmap-website
 # do bundle install as a convenience
-sudo -u ubuntu -H bundle install --retry=10 --jobs=2
+sudo bundle install --retry=10 --jobs=2
 # create user and database for openstreetmap-website
 db_user_exists=`sudo -u postgres psql postgres -tAc "select 1 from pg_roles where rolname='ubuntu'"`
 if [ "$db_user_exists" != "1" ]; then
